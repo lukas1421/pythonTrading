@@ -1,0 +1,15 @@
+import tushare as ts
+
+
+def test1():
+    indices = ['sh000001', 'sh000016', 'sz399006', 'sh000905', 'sz399001']
+
+    for index in indices:
+        df = ts.get_hist_data(index, ktype='5', start='2019-01-30')
+        df1 = df[['open', 'high', 'low', 'close']].sort_values(['date'])
+        print(index)
+        #print(df1)
+        df1.to_csv('/home/l/' + index + ".csv", mode='w', header='False')
+
+
+test1();
