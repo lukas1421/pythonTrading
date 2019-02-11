@@ -19,5 +19,7 @@ def getDayData():
         df1.to_csv('/home/l/chinaData/' + index + "_day.csv", mode='w', header='False')
 
 
+
 get5mData();
 getDayData();
+
